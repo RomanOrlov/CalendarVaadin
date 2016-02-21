@@ -1,4 +1,4 @@
-package CalendarVaadin;
+package view;
 
 import com.vaadin.ui.components.calendar.event.BasicEvent;
 
