@@ -39,6 +39,7 @@ public class ConsultationManager {
                     "and nbc_proc.procendtime is not NULL";
             String from = Util.getDate(fromDate);
             String to =  Util.getDate(toDate);
+            sql = String.format(sql,from,to);
             Object[] params = new Object[]{from,to};
             BeanListHandler<Consultation> handler = new BeanListHandler<>(Consultation.class);
             return qr.query(con,sql, handler,params);
