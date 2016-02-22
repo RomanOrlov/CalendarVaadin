@@ -18,7 +18,7 @@ public class Consultation
 
     String patronymic;
 
-    String cas_history_num;
+    int case_history_num;
 
     String diagnosis;
 
@@ -32,10 +32,10 @@ public class Consultation
 
 
 
-    public Consultation(Date birthday, String cas_history_num, String diagnosis, String patronymic, String name,
+    public Consultation(Date birthday, int case_history_num, String diagnosis, String patronymic, String name,
                         Date procbegintime, Date procendtime, String surname) {
         this.birthday = birthday;
-        this.cas_history_num = cas_history_num;
+        this.case_history_num = case_history_num;
         this.diagnosis = diagnosis;
         this.patronymic = patronymic;
         this.name = name;
@@ -93,12 +93,12 @@ public class Consultation
         this.patronymic = patronymic;
     }
 
-    public String getCas_history_num() {
-        return cas_history_num;
+    public int getCase_history_num() {
+        return case_history_num;
     }
 
-    public void setCas_history_num(String cas_history_num) {
-        this.cas_history_num = cas_history_num;
+    public void setCase_history_num(int case_history_num) {
+        this.case_history_num = case_history_num;
     }
 
     public String getDiagnosis() {
@@ -126,7 +126,7 @@ public class Consultation
                 ", surname='" + surname + '\'' +
                 ", name='" + name + '\'' +
                 ", patronymic='" + patronymic + '\'' +
-                ", cas_history_num='" + cas_history_num + '\'' +
+                ", cas_history_num='" + case_history_num + '\'' +
                 ", diagnosis='" + diagnosis + '\'' +
                 ", birthday=" + birthday +
                 '}';

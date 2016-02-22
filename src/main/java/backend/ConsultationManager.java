@@ -25,27 +25,28 @@ public class ConsultationManager {
                 Connection con = DB.getConnection()
         ) {
             QueryRunner qr = new QueryRunner();
-            String sql = "select\n" +
-                    "nbc_proc.procbegintime, nbc_proc.procendtime,\n" +
-                    "bas_people.surname,bas_people.name,bas_people.patronymic,\n" +
-                    "nbc_patients.case_history_num,\n" +
-                    " nbc_patients.diagnosis,bas_people.birthday\n" +
-                    " from bas_people\n" +
-                    " join nbc_patients  on  bas_people.n = nbc_patients.bas_people_n\n" +
-                    " left join   nbc_proc on  nbc_proc.nbc_patients_n = nbc_patients.n\n" +
-                    " where nbc_proc.proc_type = 4\n" +
+            String sql = "SELECT\n" +
+                    "procbegintime, procendtime,\n" +
+                    "surname,name,patronymic,\n" +
+                    "case_history_num,\n" +
+                    "diagnosis,birthday\n" +
+                    " FROM bas_people\n" +
+                    " JOIN nbc_patients  on  bas_people.n = nbc_patients.bas_people_n\n" +
+                    " LEFT JOIN  nbc_proc on  nbc_proc.nbc_patients_n = nbc_patients.n\n" +
+                    " WHERE nbc_proc.proc_type = 4\n" +
                     "\n" +
-                    "and  nbc_proc.procbegintime between '%s' and '%s'\n" +
-                    "and nbc_proc.procendtime is not NULL";
+                    "AND  nbc_proc.procbegintime between '%s' and '%s'\n" +
+                    "AND nbc_proc.procendtime is not NULL";
+
+            String to = Util.getDate(toDate);
             String from = Util.getDate(fromDate);
-            String to =  Util.getDate(toDate);
             sql = String.format(sql,from,to);
-            Object[] params = new Object[]{from,to};
-            BeanListHandler<Consultation> handler = new BeanListHandler<>(Consultation.class);
-            return qr.query(con,sql, handler,params);
+            BeanListHandler<Consultation> handler = new BeanListHandler<>(Consultation.class); //
+            return qr.query(con,sql, handler);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
 
 
     }

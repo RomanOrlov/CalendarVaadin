@@ -44,8 +44,12 @@ public class ConsultationPresenter {
         for (int i=0; i < consultations.size();i++)
         {
             Random random = new Random();
-             int value = random.nextInt(executor.size());
-            consultationBasicEvent = new ConsultationBasicEvent(consultations.get(i),executor.get(value),"Радиохирургия");
+            int value = random.nextInt(executor.size());
+            consultationBasicEvent = new ConsultationBasicEvent("Радиохирургия","Some description.",
+                    consultations.get(i).getProcbegintime(),consultations.get(i).getProcendtime(),consultations.get(i).getName(),
+                    consultations.get(i).getSurname(),consultations.get(i).getPatronymic(),consultations.get(i).getDiagnosis(),
+                    consultations.get(i).getCase_history_num(),consultations.get(i).getBirthday(),
+                    executor.get(value));
             consultationModel.consultationBasicEventBeanItemContainer.addBean(consultationBasicEvent);
         }
 
