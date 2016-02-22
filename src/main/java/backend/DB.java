@@ -17,7 +17,10 @@ public class DB {
             throw new RuntimeException(e);
         }
     }
-    static final String url = "";
+    static final String url ="jdbc:firebirdsql://localhost:3050/C:\\Users\\user\\Desktop\\IBexpert_bd\\IBExpert\\DBNEW\\lgknew.fdb?encoding=WIN1251";
+
+
+
     static final String user_name = "SYSDBA";
     static final String user_password = "masterkey";
 

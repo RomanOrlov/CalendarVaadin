@@ -7,6 +7,11 @@
           <element id="module-output" name="CalendarVaadin" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.firebirdsql.jdbc:jaybird-jdk18:2.2.9" />
+          <element id="library" level="project" name="Maven: javax.resource:connector-api:1.5" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr-runtime:3.4" />
+          <element id="library" level="project" name="Maven: org.antlr:stringtemplate:3.2.1" />
+          <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-server:7.6.2" />
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-sass-compiler:0.9.13" />
           <element id="library" level="project" name="Maven: com.vaadin.external.flute:flute:1.3.0.gg2" />
@@ -21,11 +26,6 @@
           <element id="library" level="project" name="Maven: com.vaadin.external.slf4j:vaadin-slf4j-jdk14:1.6.1" />
           <element id="library" level="project" name="Maven: org.w3c.css:sac:1.3" />
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-themes:7.6.2" />
-          <element id="library" level="project" name="Maven: org.firebirdsql.jdbc:jaybird-jdk17:2.2.5" />
-          <element id="library" level="project" name="Maven: javax.resource:connector-api:1.5" />
-          <element id="library" level="project" name="Maven: org.antlr:antlr-runtime:3.4" />
-          <element id="library" level="project" name="Maven: org.antlr:stringtemplate:3.2.1" />
-          <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: commons-dbutils:commons-dbutils:1.6" />
         </element>
       </element>
