@@ -6,6 +6,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 
@@ -15,15 +16,11 @@ import java.util.Date;
 
 
 public class ConsultationManager {
-
-
+    private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
     public Collection<? extends Consultation> listConsultation (Date fromDate,Date toDate) // дата будет браться от 01.01.2016 и 20.02.2016
     {
-
-        try (
-                Connection con = DB.getConnection()
-        ) {
+        try (Connection con = DB.getConnection()) {
             QueryRunner qr = new QueryRunner();
             String sql = "SELECT\n" +
                     "procbegintime, procendtime,\n" +
@@ -38,18 +35,11 @@ public class ConsultationManager {
                     "AND  nbc_proc.procbegintime between '%s' and '%s'\n" +
                     "AND nbc_proc.procendtime is not NULL";
 
-            String to = Util.getDate(toDate);
-            String from = Util.getDate(fromDate);
-            sql = String.format(sql,from,to);
+            sql = String.format(sql,format.format(fromDate),format.format(toDate));
             BeanListHandler<Consultation> handler = new BeanListHandler<>(Consultation.class); //
             return qr.query(con,sql, handler);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-
-
     }
-
-
 }

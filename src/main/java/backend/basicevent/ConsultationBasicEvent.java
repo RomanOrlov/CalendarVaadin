@@ -1,5 +1,6 @@
 package backend.basicevent;
 
+import backend.entity.Consultation;
 import com.vaadin.ui.components.calendar.event.BasicEvent;
 
 import java.util.Date;
@@ -8,43 +9,35 @@ import java.util.Date;
  * Created by user on 20.02.2016.
  */
 public class ConsultationBasicEvent extends BasicEvent{
-    private static final long serialVersionUID = 2820133201983036866L;
 
+    private String executor;
+    private String surname;
+    private String name;
+    private String patronymic;
+    private int case_history_num;
+    private String diagnosis;
+    private Date birthday;
 
-    String executor;
-
-    String surname;
-
-    String name;
-
-    String patronymic;
-
-    int case_history_num;
-
-    String diagnosis;
-
-    Date birthday;
-
-
-    public ConsultationBasicEvent(String caption,String description,Date start,Date end,String name,String surname,String patronymic,String diagnosis,
-                                   int case_history_num,Date birthday,String executor)
+    public ConsultationBasicEvent(String caption, String description, Consultation consultation)
     {
-        super(caption,description,start,end);
+        super(caption,description,consultation.getProcbegintime(),consultation.getProcendtime());
+        this.executor = consultation.getExecutor();
+        this.name = consultation.getName();
+        this.case_history_num = consultation.getCase_history_num();
+        this.surname = consultation.getSurname();
+        this.diagnosis = consultation.getDiagnosis();
+        this.patronymic = consultation.getPatronymic();
+        this.birthday = consultation.getBirthday();
+    }
 
-        this.executor = executor;
-
-        this.name = name;
-
-        this.case_history_num = case_history_num;
-
-        this.surname = surname;
-
-        this.diagnosis = diagnosis;
-
-        this.patronymic = patronymic;
-
+    public ConsultationBasicEvent(Date birthday, int case_history_num, String diagnosis, String executor, String name, String patronymic, String surname) {
         this.birthday = birthday;
-
+        this.case_history_num = case_history_num;
+        this.diagnosis = diagnosis;
+        this.executor = executor;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.surname = surname;
     }
 
     public Date getBirthday() {

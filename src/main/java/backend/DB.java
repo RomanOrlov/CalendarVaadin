@@ -9,7 +9,6 @@ import java.util.logging.Logger;
  * Created by user on 20.02.2016.
  */
 public class DB {
-
     static {
         try {
             DriverManager.registerDriver(new org.firebirdsql.jdbc.FBDriver());
@@ -17,12 +16,9 @@ public class DB {
             throw new RuntimeException(e);
         }
     }
-    static final String url ="jdbc:firebirdsql://localhost:3050/C:\\Users\\user\\Desktop\\IBexpert_bd\\IBExpert\\DBNEW\\lgknew.fdb?encoding=WIN1251";
-
-
-
-    static final String user_name = "SYSDBA";
-    static final String user_password = "masterkey";
+    private static final String url ="jdbc:firebirdsql://localhost:3050/D:\\FireBirdDB\\LGKNEW.fdb?encoding=WIN1251";
+    private static final String user_name = "SYSDBA";
+    private static final String user_password = "masterkey";
 
     public static Connection getConnection() throws SQLException {
         try {

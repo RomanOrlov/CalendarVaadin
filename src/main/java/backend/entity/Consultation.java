@@ -7,30 +7,17 @@ import java.util.Date;
  */
 public class Consultation
 {
+    private Date procbegintime;
+    private Date procendtime;
+    private String surname;
+    private String name;
+    private String patronymic;
+    private int case_history_num;
+    private String diagnosis;
+    private Date birthday;
+    private String executor;
 
-    Date procbegintime;
-
-    Date procendtime;
-
-    String surname;
-
-    String name;
-
-    String patronymic;
-
-    int case_history_num;
-
-    String diagnosis;
-
-    Date birthday;
-
-
-    public Consultation()
-    {
-
-    }
-
-
+    public Consultation() {}
 
     public Consultation(Date birthday, int case_history_num, String diagnosis, String patronymic, String name,
                         Date procbegintime, Date procendtime, String surname) {
@@ -44,7 +31,6 @@ public class Consultation
         this.surname = surname;
     }
 
-
     public Date getProcbegintime ( )
     {
         return procbegintime;
@@ -54,7 +40,6 @@ public class Consultation
     {
         this.procbegintime = procbegintime;
     }
-
 
     public Date getProcendtime ( )
     {
@@ -66,7 +51,6 @@ public class Consultation
         this.procendtime = procendtime;
     }
 
-
     public String getSurname() {
         return surname;
     }
@@ -75,7 +59,6 @@ public class Consultation
         this.surname = surname;
     }
 
-
     public String getName() {
         return name;
     }
@@ -83,7 +66,6 @@ public class Consultation
     public void setName(String name) {
         this.name = name;
     }
-
 
     public String getPatronymic() {
         return patronymic;
@@ -117,6 +99,13 @@ public class Consultation
         this.birthday = birthday;
     }
 
+    public String getExecutor() {
+        return executor;
+    }
+
+    public void setExecutor(String executor) {
+        this.executor = executor;
+    }
 
     @Override
     public String toString() {
@@ -131,5 +120,4 @@ public class Consultation
                 ", birthday=" + birthday +
                 '}';
     }
-
 }
