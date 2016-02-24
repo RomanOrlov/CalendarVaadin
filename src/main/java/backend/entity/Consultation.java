@@ -17,7 +17,7 @@ public class Consultation
     private Date birthday;
     private String executor;
 
-    public Consultation() {}
+   public Consultation() {}
 
     public Consultation(Date birthday, int case_history_num, String diagnosis, String patronymic, String name,
                         Date procbegintime, Date procendtime, String surname) {

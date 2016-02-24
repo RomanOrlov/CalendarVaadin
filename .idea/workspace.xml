@@ -2,44 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51e601ef-94c2-424f-acdc-257104153a2a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/backend/Util.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/view/CalendarTestEvent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/backend/Util.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/backend/ConsultationManager.class" afterPath="$PROJECT_DIR$/target/classes/backend/ConsultationManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/backend/DB.class" afterPath="$PROJECT_DIR$/target/classes/backend/DB.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/backend/basicevent/ConsultationBasicEvent.class" afterPath="$PROJECT_DIR$/target/classes/backend/basicevent/ConsultationBasicEvent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/backend/entity/Consultation.class" afterPath="$PROJECT_DIR$/target/classes/backend/entity/Consultation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/ConsultationModel.class" afterPath="$PROJECT_DIR$/target/classes/model/ConsultationModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/presenter/ConsultationPresenter.class" afterPath="$PROJECT_DIR$/target/classes/presenter/ConsultationPresenter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/CalendarTestEvent.class" afterPath="$PROJECT_DIR$/target/classes/view/CalendarTestEvent.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$10.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$11.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$12.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$7.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$8.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$9.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm$5.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/App$AppServlet.class" afterPath="$PROJECT_DIR$/target/classes/App$AppServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/App.class" afterPath="$PROJECT_DIR$/target/classes/App.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$1.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$10.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$11.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$12.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$12.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$2.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$3.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$4.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$5.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$6.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$7.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$8.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$9.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView$Mode.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView$Mode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/ConsultationView.class" afterPath="$PROJECT_DIR$/target/classes/view/ConsultationView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm$1.class" afterPath="$PROJECT_DIR$/target/classes/view/EventEditForm$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm$2.class" afterPath="$PROJECT_DIR$/target/classes/view/EventEditForm$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm$3.class" afterPath="$PROJECT_DIR$/target/classes/view/EventEditForm$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm$4.class" afterPath="$PROJECT_DIR$/target/classes/view/EventEditForm$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm$5.class" afterPath="$PROJECT_DIR$/target/classes/view/EventEditForm$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/view/EventEditForm.class" afterPath="$PROJECT_DIR$/target/classes/view/EventEditForm.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/backend/ConsultationManager.java" afterPath="$PROJECT_DIR$/src/main/java/backend/ConsultationManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/backend/DB.java" afterPath="$PROJECT_DIR$/src/main/java/backend/DB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/backend/basicevent/ConsultationBasicEvent.java" afterPath="$PROJECT_DIR$/src/main/java/backend/basicevent/ConsultationBasicEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/App.java" afterPath="$PROJECT_DIR$/src/main/java/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/backend/entity/Consultation.java" afterPath="$PROJECT_DIR$/src/main/java/backend/entity/Consultation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/ConsultationModel.java" afterPath="$PROJECT_DIR$/src/main/java/model/ConsultationModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/presenter/ConsultationPresenter.java" afterPath="$PROJECT_DIR$/src/main/java/presenter/ConsultationPresenter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/ConsultationView.java" afterPath="$PROJECT_DIR$/src/main/java/view/ConsultationView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/EventEditForm.java" afterPath="$PROJECT_DIR$/src/main/java/view/EventEditForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Tests.java" afterPath="$PROJECT_DIR$/src/test/java/Tests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
     </list>
     <ignored path="CalendarVaadin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,20 +55,18 @@
       <file leaf-file-name="ConsultationView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/ConsultationView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-52.03448">
-              <caret line="646" column="5" selection-start-line="646" selection-start-column="5" selection-end-line="646" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-9.379311">
+              <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsultationPresenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/presenter/ConsultationPresenter.java">
+      <file leaf-file-name="mytheme.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/mytheme.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state vertical-scroll-proportion="11.846154">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+              <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -97,23 +85,15 @@
       <file leaf-file-name="EventEditForm.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/EventEditForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.808314">
-              <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.24349882">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#updateCalendarEventForm#0;class#EventEditForm#0" expanded="false" />
-                <element signature="method#setFormDateResolution#0;class#EventEditForm#0" expanded="false" />
-                <element signature="method#getFormCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-                <element signature="method#createCalendarEventPopup#0;class#EventEditForm#0" expanded="false" />
+                <element signature="e#3450#3480#0" expanded="true" />
                 <element signature="method#showEventPopup#0;class#EventEditForm#0" expanded="false" />
-                <element signature="method#updateCalendarEventPopup#0;class#EventEditForm#0" expanded="false" />
-                <element signature="method#createCheckBox#0;class#EventEditForm#0" expanded="false" />
                 <element signature="method#createTextField#0;class#EventEditForm#0" expanded="false" />
                 <element signature="method#createTextArea#0;class#EventEditForm#0" expanded="false" />
                 <element signature="method#createDateField#0;class#EventEditForm#0" expanded="false" />
-                <element signature="method#commitCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-                <element signature="method#deleteCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-                <element signature="method#discardCalendarEvent#0;class#EventEditForm#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -123,11 +103,38 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/model/ConsultationModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
-              <folding>
-                <element signature="e#437#438#0" expanded="true" />
-                <element signature="e#477#478#0" expanded="true" />
-              </folding>
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="52.96154">
+              <caret line="168" column="14" selection-start-line="168" selection-start-column="14" selection-end-line="168" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicWeekClickHandler.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.2/vaadin-server-7.6.2.jar!/com/vaadin/ui/components/calendar/handler/BasicWeekClickHandler.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.3333335">
+              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsultationPresenter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/presenter/ConsultationPresenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,27 +143,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/backend/ConsultationManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConsultationBasicEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/backend/basicevent/ConsultationBasicEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="155" selection-start-line="32" selection-start-column="155" selection-end-line="32" selection-end-column="155" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DB.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/backend/DB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -166,9 +153,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/backend/entity/Consultation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="101" column="33" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+              <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
               <folding>
-                <element signature="e#2296#2297#0" expanded="true" />
+                <element signature="e#2264#2265#0" expanded="true" />
+                <element signature="e#2295#2296#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,17 +189,18 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/view/CalendarView.java" />
         <option value="$PROJECT_DIR$/src/main/java/CalendarVaadin/MyUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/EventEditForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ConsultationModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/backend/entity/Consultation.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/basicevent/ConsultationBasicEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/DB.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/backend/ConsultationManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/presenter/ConsultationPresenter.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/CalendarTestEvent.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Tests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/backend/entity/Consultation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/presenter/ConsultationPresenter.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/ConsultationView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/EventEditForm.java" />
       </list>
     </option>
   </component>
@@ -330,7 +319,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -638,12 +626,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
@@ -1129,7 +1118,8 @@
       <workItem from="1456024050139" duration="3660000" />
       <workItem from="1456167554848" duration="307000" />
       <workItem from="1456175413913" duration="4669000" />
-      <workItem from="1456184999481" duration="9070000" />
+      <workItem from="1456184999481" duration="9741000" />
+      <workItem from="1456232390506" duration="19483000" />
     </task>
     <task id="LOCAL-00001" summary="С нуля + исправление в sql запросе">
       <created>1456020441696</created>
@@ -1155,7 +1145,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456183494475</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Чистка + подготовка к работе с данными из БД">
+      <created>1456201128362</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1456201128362</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1168,9 +1164,15 @@
     <history-entry file="Tests - 2016.02.23 at 07h 01m 21s.xml">
       <configuration name="Tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Tests - 2016.02.23 at 21h 22m 40s.xml">
+      <configuration name="Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests - 2016.02.23 at 21h 26m 28s.xml">
+      <configuration name="Tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20651000" />
+    <option name="totallyTimeSpent" value="40805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1178,28 +1180,28 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32818073" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1633888" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17473525" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21196581" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22905983" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2576792" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28668684" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1220,19 +1222,12 @@
     <MESSAGE value="С нуля + исправление в sql запросе (О Коже, мне пришлось переименовывать папку пользователя, лезть в regedit, только чтобы запустить эту срань!)" />
     <MESSAGE value="Разбиение календаря на несколько классов, чистка мусора, разбиение функций по смыслу и немного комментариев." />
     <MESSAGE value="Новая ветка&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Новая ветка&#10;" />
+    <MESSAGE value="Чистка + подготовка к работе с данными из БД" />
+    <option name="LAST_COMMIT_MESSAGE" value="Чистка + подготовка к работе с данными из БД" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/EventEditForm.java</url>
-          <line>217</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1241,6 +1236,51 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ConsultationModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/ConsultationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/basicevent/ConsultationBasicEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="155" selection-start-line="32" selection-start-column="155" selection-end-line="32" selection-end-column="155" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/DB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/entity/Consultation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="33" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+          <folding>
+            <element signature="e#2264#2265#0" expanded="true" />
+            <element signature="e#2295#2296#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1255,19 +1295,11 @@
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#updateCalendarEventForm#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#setFormDateResolution#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#getFormCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#createCalendarEventPopup#0;class#EventEditForm#0" expanded="false" />
+            <element signature="e#3450#3480#0" expanded="true" />
             <element signature="method#showEventPopup#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#updateCalendarEventPopup#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#createCheckBox#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createTextField#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createTextArea#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createDateField#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#commitCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#deleteCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#discardCalendarEvent#0;class#EventEditForm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1293,7 +1325,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
-            <element signature="e#2296#2297#0" expanded="true" />
+            <element signature="e#2264#2265#0" expanded="true" />
+            <element signature="e#2295#2296#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1310,9 +1343,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="108" column="47" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1348,19 +1379,11 @@
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#updateCalendarEventForm#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#setFormDateResolution#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#getFormCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#createCalendarEventPopup#0;class#EventEditForm#0" expanded="false" />
+            <element signature="e#3450#3480#0" expanded="true" />
             <element signature="method#showEventPopup#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#updateCalendarEventPopup#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#createCheckBox#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createTextField#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createTextArea#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createDateField#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#commitCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#deleteCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#discardCalendarEvent#0;class#EventEditForm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1393,9 +1416,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="108" column="47" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1431,19 +1452,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#updateCalendarEventForm#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#setFormDateResolution#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#getFormCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#createCalendarEventPopup#0;class#EventEditForm#0" expanded="false" />
+            <element signature="e#3450#3480#0" expanded="true" />
             <element signature="method#showEventPopup#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#updateCalendarEventPopup#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#createCheckBox#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createTextField#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createTextArea#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createDateField#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#commitCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#deleteCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#discardCalendarEvent#0;class#EventEditForm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1552,55 +1565,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.2/vaadin-server-7.6.2.jar!/com/vaadin/ui/components/calendar/event/BasicEvent.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-24.074074">
           <caret line="104" column="19" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/DB.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Tests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/entity/Consultation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="101" column="33" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
-          <folding>
-            <element signature="e#2296#2297#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ConsultationModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
-          <folding>
-            <element signature="e#437#438#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/backend/ConsultationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1613,10 +1588,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/DB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+          <caret line="22" column="66" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/entity/Consultation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="e#2264#2265#0" expanded="true" />
+            <element signature="e#2295#2296#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/backend/ConsultationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.2/vaadin-server-7.6.2.jar!/com/vaadin/ui/components/calendar/handler/BasicWeekClickHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3333335">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/mytheme.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.846154">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="52.96154">
+          <caret line="168" column="14" selection-start-line="168" selection-start-column="14" selection-end-line="168" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ConsultationModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1624,40 +1650,38 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/presenter/ConsultationPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/ConsultationView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-52.03448">
-          <caret line="646" column="5" selection-start-line="646" selection-start-column="5" selection-end-line="646" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-9.379311">
+          <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/EventEditForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.808314">
-          <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.24349882">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#updateCalendarEventForm#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#setFormDateResolution#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#getFormCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#createCalendarEventPopup#0;class#EventEditForm#0" expanded="false" />
+            <element signature="e#3450#3480#0" expanded="true" />
             <element signature="method#showEventPopup#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#updateCalendarEventPopup#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#createCheckBox#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createTextField#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createTextArea#0;class#EventEditForm#0" expanded="false" />
             <element signature="method#createDateField#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#commitCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#deleteCalendarEvent#0;class#EventEditForm#0" expanded="false" />
-            <element signature="method#discardCalendarEvent#0;class#EventEditForm#0" expanded="false" />
           </folding>
         </state>
       </provider>

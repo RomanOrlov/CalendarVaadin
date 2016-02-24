@@ -20,7 +20,10 @@ public class Tests {
         calendar.add(calendar.MONTH, 1);
         Date endDay = calendar.getTime();
         Collection<? extends Consultation>  consultations =  new ConsultationManager().listConsultation(startDay,endDay);
+        for (Consultation cs : consultations) {
+            cs.getProcbegintime().setHours(9);
+            cs.getProcendtime().setHours(18);
+        }
         System.out.println(consultations);
     }
-
 }

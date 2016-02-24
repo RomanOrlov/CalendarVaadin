@@ -27,34 +27,26 @@ public class EventEditForm {
     private Button applyEventButton;
     private boolean useSecondResolution;
 
-    public EventEditForm(ConsultationView consultationView, Calendar calendarComponent, BasicEventProvider dataSource) {
+    public EventEditForm(ConsultationView consultationView) {
         this.consultationView = consultationView;
-        this.calendarComponent = calendarComponent;
-        this.dataSource = dataSource;
+        this.calendarComponent = consultationView.calendarComponent;
+        this.dataSource = consultationView.dataSource;
     }
 
     // >> Работа с FieldGroup
     private void initFormFields(Layout formLayout, Class<? extends CalendarEvent> eventClass) {
 
-        startDateField = createDateField("Start date");
-        endDateField = createDateField("End date");
+        startDateField = createDateField("Начало");
+        endDateField = createDateField("Конец");
 
-        final CheckBox allDayField = createCheckBox("All-day");
-        allDayField.addValueChangeListener(new Property.ValueChangeListener() {
-
-            private static final long serialVersionUID = -7104996493482558021L;
-
-            @Override
-            public void valueChange(Property.ValueChangeEvent event) {
-                Object value = event.getProperty().getValue();
-                if (value instanceof Boolean && Boolean.TRUE.equals(value)) {
-                    setFormDateResolution(Resolution.DAY);
-
-                } else {
-                    setFormDateResolution(Resolution.MINUTE);
-                }
+        final CheckBox allDayField = createCheckBox("Весь день");
+        allDayField.addValueChangeListener(valueChangeEvent -> {
+            Object value = valueChangeEvent.getProperty().getValue();
+            if (value instanceof Boolean && Boolean.TRUE.equals(value)) {
+                setFormDateResolution(Resolution.DAY);
+            } else {
+                setFormDateResolution(Resolution.MINUTE);
             }
-
         });
 
         captionField = createTextField("Caption");
@@ -77,7 +69,7 @@ public class EventEditForm {
         scheduleEventFieldGroup.bind(allDayField, "allDay");
     }
     private void updateCalendarEventForm(CalendarEvent event) {
-        BeanItem<CalendarEvent> item = new BeanItem<CalendarEvent>(event);
+        BeanItem<CalendarEvent> item = new BeanItem<>(event);
         scheduleEventFieldLayout.removeAllComponents();
         scheduleEventFieldGroup = new FieldGroup();
         initFormFields(scheduleEventFieldLayout, event.getClass());
@@ -113,48 +105,18 @@ public class EventEditForm {
         scheduleEventFieldLayout.setMargin(false);
         layout.addComponent(scheduleEventFieldLayout);
 
-        applyEventButton = new Button("Apply", new Button.ClickListener() {
-
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                try {
-                    commitCalendarEvent();
-                } catch (FieldGroup.CommitException e) {
-                    e.printStackTrace();
-                }
+        applyEventButton = new Button("Apply", clickEvent -> {
+            try {
+                commitCalendarEvent();
+            } catch (FieldGroup.CommitException e) {
+                e.printStackTrace();
             }
         });
         applyEventButton.addStyleName("primary");
-        Button cancel = new Button("Cancel", new Button.ClickListener() {
-
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                discardCalendarEvent();
-            }
-        });
-        deleteEventButton = new Button("Delete", new Button.ClickListener() {
-
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                deleteCalendarEvent();
-            }
-        });
+        Button cancel = new Button("Cancel", clickEvent -> discardCalendarEvent());
+        deleteEventButton = new Button("Delete", clickEvent -> deleteCalendarEvent());
         deleteEventButton.addStyleName("borderless");
-        scheduleEventPopup.addCloseListener(new Window.CloseListener() {
-
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public void windowClose(Window.CloseEvent e) {
-                discardCalendarEvent();
-            }
-        });
+        scheduleEventPopup.addCloseListener(closeEvent -> discardCalendarEvent());
 
         HorizontalLayout buttons = new HorizontalLayout();
         buttons.addStyleName("v-window-bottom-toolbar");
@@ -173,22 +135,18 @@ public class EventEditForm {
         if (event == null) {
             return;
         }
-
         updateCalendarEventPopup(newEvent);
         updateCalendarEventForm(event);
-        // TODO this only works the first time
         captionField.focus();
         if (!consultationView.getUI().getWindows().contains(scheduleEventPopup)) {
             consultationView.getUI().addWindow(scheduleEventPopup);
         }
-
     }
 
     private void updateCalendarEventPopup(boolean newEvent) {
         if (scheduleEventPopup == null) {
             createCalendarEventPopup();
         }
-
         if (newEvent) {
             scheduleEventPopup.setCaption("New event");
         } else {
@@ -241,6 +199,7 @@ public class EventEditForm {
         if (!dataSource.containsEvent(event)) {
             dataSource.addEvent(event);
         }
+        //if (m)
 
         consultationView.getUI().removeWindow(scheduleEventPopup);
     }
@@ -258,6 +217,4 @@ public class EventEditForm {
         consultationView.getUI().removeWindow(scheduleEventPopup);
     }
     // >> Изменение и сброс события (по факту сущности, реализующей BasicEvent)
-
-
 }

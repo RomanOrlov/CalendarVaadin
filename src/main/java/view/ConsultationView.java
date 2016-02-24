@@ -3,13 +3,13 @@ package view;
 import backend.ConsultationManager;
 import backend.basicevent.ConsultationBasicEvent;
 import backend.entity.Consultation;
-import com.vaadin.data.Property;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.components.calendar.CalendarComponentEvents;
+import com.vaadin.ui.components.calendar.CalendarComponentEvents.*;
 import com.vaadin.ui.components.calendar.event.BasicEvent;
 import com.vaadin.ui.components.calendar.event.BasicEventProvider;
 import com.vaadin.ui.components.calendar.event.CalendarEvent;
@@ -33,10 +33,10 @@ public class ConsultationView extends GridLayout implements View{
     // Контролируем время
     private GregorianCalendar gregorianCalendar;
     private Date currentMonthsFirstDate;
-
+    public final ConsultationModel consultationModel;
     // Визуальные компоненты:
     // Сам календарь
-    private Calendar calendarComponent;
+    public Calendar calendarComponent;
     // Отображение всего месяца
     private Button monthButton;
     // Отображение недели
@@ -59,17 +59,17 @@ public class ConsultationView extends GridLayout implements View{
 
     // Текущй режим отображения
     private Mode viewMode = Mode.WEEK;
-    private BasicEventProvider dataSource;
+    public BasicEventProvider dataSource;
 
     EventEditForm eventEditForm;
 
-    public ConsultationView() {
+    public ConsultationView(ConsultationModel consultationModel) {
+        this.consultationModel = consultationModel;
         setSizeFull();
         setSpacing(true);
         setLocale(Locale.getDefault());
         initCalendar();
         initLayoutContent();
-        addInitialEvents();
     }
 
     private void updateCaptionLabel() {
@@ -79,38 +79,28 @@ public class ConsultationView extends GridLayout implements View{
                 + gregorianCalendar.get(GregorianCalendar.YEAR));
     }
 
-
-
-    private CalendarEvent createNewEvent(Date startDate, Date endDate) {
-        BasicEvent event = new BasicEvent();
-        event.setCaption("");
-        event.setStart(startDate);
-        event.setEnd(endDate);
-        event.setStyleName("color1");
+    private CalendarEvent createNewEvent(Date start, Date end) {
+        Consultation consultation = new Consultation(new Date(),0,"","","",start,end,"");
+        ConsultationBasicEvent event = new ConsultationBasicEvent("Новая консультаций","Здесь что-то будет",consultation);
+        consultationModel.beanItemContainer.addBean(event);
         return event;
     }
 
     private ConsultationBasicEvent getNewEvent(String caption, Date start, Date end) {
         Consultation consultation = new Consultation(new Date(),0,"","","",start,end,"");
         ConsultationBasicEvent event = new ConsultationBasicEvent(caption,"new event",consultation);
-        event.setCaption(caption);
-        event.setStart(start);
-        event.setEnd(end);
-
+        consultationModel.beanItemContainer.addBean(event);
         return event;
     }
-
-
 
     // >> INITIALIZATION AND LAYOUT <<
 
     // Инициализируем компонент calendarComponent
     private void initCalendar() {
-        // TODO Заменить на свой собственный, который будет тянуть из базы
         dataSource = new BasicEventProvider();
-
         calendarComponent = new Calendar(dataSource);
-        eventEditForm = new EventEditForm(this,calendarComponent,dataSource);
+        calendarComponent.setContainerDataSource(consultationModel.beanItemContainer);
+        eventEditForm = new EventEditForm(this);
         calendarComponent.setLocale(getLocale());
         calendarComponent.setSizeFull();
         // Чем меньше отображается часов, тем детальнее события.
@@ -143,14 +133,11 @@ public class ConsultationView extends GridLayout implements View{
         HorizontalLayout hl = new HorizontalLayout();
         hl.setWidth("100%");
         hl.setSpacing(true);
-        hl.addComponent(prevButton);
-        hl.addComponent(captionLabel);
+        hl.addComponents(prevButton,captionLabel);
 
         CssLayout group = new CssLayout();
         group.addStyleName("v-component-group");
-        group.addComponent(dayButton);
-        group.addComponent(weekButton);
-        group.addComponent(monthButton);
+        group.addComponents(dayButton,weekButton,monthButton);
         hl.addComponent(group);
 
         hl.addComponent(nextButton);
@@ -159,20 +146,11 @@ public class ConsultationView extends GridLayout implements View{
         hl.setComponentAlignment(group, Alignment.MIDDLE_CENTER);
         hl.setComponentAlignment(nextButton, Alignment.MIDDLE_RIGHT);
 
-        // monthButton.setVisible(viewMode == Mode.WEEK);
-        // weekButton.setVisible(viewMode == Mode.DAY);
-
         HorizontalLayout controlPanel = new HorizontalLayout();
+        controlPanel.setMargin(true);
         controlPanel.setSpacing(true);
         controlPanel.setWidth("100%");
-        controlPanel.setMargin(new MarginInfo(false, false, true, false));
-        controlPanel.addComponent(hideWeekendsButton);
-        controlPanel.addComponent(addNewEvent);
-        controlPanel.setExpandRatio(addNewEvent, 1.0f);
-
-        controlPanel.setComponentAlignment(hideWeekendsButton,
-                Alignment.BOTTOM_LEFT);
-        controlPanel.setComponentAlignment(addNewEvent, Alignment.BOTTOM_RIGHT);
+        controlPanel.addComponents(hideWeekendsButton,hideRS,hideOhcno,hideOncology,hideZaohcno,addNewEvent);
 
         addComponent(controlPanel);
         addComponent(hl);
@@ -181,100 +159,47 @@ public class ConsultationView extends GridLayout implements View{
     }
 
     private void initHideWeekEndButton() {
-        hideWeekendsButton = new CheckBox("Hide weekends");
-        hideWeekendsButton.addStyleName("small");
+        hideWeekendsButton = new CheckBox("Выходные");
         hideWeekendsButton.setImmediate(true);
         hideWeekendsButton
-                .addValueChangeListener(new Property.ValueChangeListener() {
-
-                    private static final long serialVersionUID = 1L;
-
-                    @Override
-                    public void valueChange(Property.ValueChangeEvent event) {
-                        setWeekendsHidden(hideWeekendsButton.getValue());
-                    }
-                });
+                .addValueChangeListener(valueChangeEvent -> setWeekendsHidden(hideWeekendsButton.getValue()));
+        hideZaohcno = new CheckBox("Заочные");
+        hideOhcno = new CheckBox("Очные");
+        hideOncology = new CheckBox("Онкология");
+        hideRS = new CheckBox("Радиохирургия");
     }
 
     private void initNavigationButtons() {
-        monthButton = new Button("Month", new Button.ClickListener() {
+        monthButton = new Button("Месяц", clickEvent-> switchToMonthView());
 
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                switchToMonthView();
-            }
-        });
-
-        weekButton = new Button("Week", new Button.ClickListener() {
-
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                // simulate week click
+        weekButton = new Button("Неделя", clickEvent -> {
                 CalendarComponentEvents.WeekClickHandler handler = (CalendarComponentEvents.WeekClickHandler) calendarComponent
                         .getHandler(CalendarComponentEvents.WeekClick.EVENT_ID);
                 handler.weekClick(new CalendarComponentEvents.WeekClick(calendarComponent, gregorianCalendar
                         .get(GregorianCalendar.WEEK_OF_YEAR), gregorianCalendar
                         .get(GregorianCalendar.YEAR)));
-            }
         });
 
-        dayButton = new Button("Day", new Button.ClickListener() {
-
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                // simulate day click
+        dayButton = new Button("День", clickEvent -> {
                 BasicDateClickHandler handler = (BasicDateClickHandler) calendarComponent
                         .getHandler(CalendarComponentEvents.DateClickEvent.EVENT_ID);
                 handler.dateClick(new CalendarComponentEvents.DateClickEvent(calendarComponent,
                         gregorianCalendar.getTime()));
-            }
         });
 
-        nextButton = new Button("Next", new Button.ClickListener() {
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                handleNextButtonClick();
-            }
-        });
-
-        prevButton = new Button("Prev", new Button.ClickListener() {
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                handlePreviousButtonClick();
-            }
-        });
+        nextButton = new Button("Вперед", clickEvent-> handleNextButtonClick());
+        prevButton = new Button("Назад", clickEvent-> handlePreviousButtonClick());
     }
 
     public void initAddNewEventButton() {
-        addNewEvent = new Button("Add new event");
-        addNewEvent.addStyleName("primary");
-        addNewEvent.addStyleName("small");
-        addNewEvent.addClickListener(new Button.ClickListener() {
-
-            private static final long serialVersionUID = -8307244759142541067L;
-
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                Date start = getToday();
-                start.setHours(0);
-                start.setMinutes(0);
-                start.setSeconds(0);
-
-                Date end = getEndOfDay(gregorianCalendar, start);
-
-                eventEditForm.showEventPopup(createNewEvent(start, end), true);
-            }
-        });
+        addNewEvent = new Button("Новая консультация", (clickEvent -> {
+            Date start = getToday();
+            start.setHours(0);
+            start.setMinutes(0);
+            start.setSeconds(0);
+            Date end = getEndOfDay(gregorianCalendar, start);
+            eventEditForm.showEventPopup(createNewEvent(start, end), true);
+        }));
     }
 
     private void addCalendarEventListeners() {
@@ -291,13 +216,8 @@ public class ConsultationView extends GridLayout implements View{
             }
         });
 
-        calendarComponent.setHandler(new CalendarComponentEvents.EventClickHandler() {
-
-            @Override
-            public void eventClick(CalendarComponentEvents.EventClick event) {
-                eventEditForm.showEventPopup(event.getCalendarEvent(), false);
-            }
-        });
+        calendarComponent.setHandler((EventClick eventClick) ->
+                eventEditForm.showEventPopup(eventClick.getCalendarEvent(), false));
 
         calendarComponent.setHandler(new BasicDateClickHandler() {
 
@@ -309,91 +229,8 @@ public class ConsultationView extends GridLayout implements View{
                 switchToDayView();
             }
         });
-
-        calendarComponent.setHandler(new CalendarComponentEvents.RangeSelectHandler() {
-
-            @Override
-            public void rangeSelect(CalendarComponentEvents.RangeSelectEvent event) {
-                handleRangeSelect(event);
-            }
-        });
+        calendarComponent.setHandler(this::handleRangeSelect);
     }
-
-    // Класс нужен для тестов, для самого начала.
-    private void addInitialEvents() {
-        Date originalDate = gregorianCalendar.getTime();
-        Date today = getToday();
-        ConsultationManager consultationManager = new ConsultationManager();
-        ConsultationModel consultationModel = new ConsultationModel();
-        ConsultationPresenter consultationPresenter = new ConsultationPresenter(consultationModel,consultationManager);
-        calendarComponent.setContainerDataSource(consultationModel.beanItemContainer);
-
-
-        // Add a event that last a whole week
-/*
-        Date start = resolveFirstDateOfWeek(today, gregorianCalendar);
-        Date end = resolveLastDateOfWeek(today, gregorianCalendar);
-        CalendarTestEvent event = getNewEvent("Whole week event", start, end);
-        event.setAllDay(true);
-        event.setStyleName("color4");
-        event.setDescription("Description for the whole week event.");
-        dataSource.addEvent(event);
-
-        // Add a allday event
-        gregorianCalendar.setTime(start);
-        gregorianCalendar.add(GregorianCalendar.DATE, 3);
-        start = gregorianCalendar.getTime();
-        end = start;
-        event = getNewEvent("All-day event", start, end);
-        event.setAllDay(true);
-        event.setDescription("Some description.");
-        event.setStyleName("color3");
-        dataSource.addEvent(event);
-
-        // Add a second allday event
-        gregorianCalendar.add(GregorianCalendar.DATE, 1);
-        start = gregorianCalendar.getTime();
-        end = start;
-        event = getNewEvent("Second all-day event", start, end);
-        event.setAllDay(true);
-        event.setDescription("Some description.");
-        event.setStyleName("color2");
-        dataSource.addEvent(event);
-
-        gregorianCalendar.add(GregorianCalendar.DATE, -3);
-        gregorianCalendar.set(GregorianCalendar.HOUR_OF_DAY, 9);
-        gregorianCalendar.set(GregorianCalendar.MINUTE, 30);
-        start = gregorianCalendar.getTime();
-        gregorianCalendar.add(GregorianCalendar.HOUR_OF_DAY, 5);
-        gregorianCalendar.set(GregorianCalendar.MINUTE, 0);
-        end = gregorianCalendar.getTime();
-        event = getNewEvent("Appointment", start, end);
-        event.setStyleName("color1");
-        event.setDescription("A longer description, which should display correctly.");
-        dataSource.addEvent(event);
-
-        gregorianCalendar.add(GregorianCalendar.DATE, 1);
-        gregorianCalendar.set(GregorianCalendar.HOUR_OF_DAY, 11);
-        gregorianCalendar.set(GregorianCalendar.MINUTE, 0);
-        start = gregorianCalendar.getTime();
-        gregorianCalendar.add(GregorianCalendar.HOUR_OF_DAY, 8);
-        end = gregorianCalendar.getTime();
-        event = getNewEvent("Training", start, end);
-        event.setStyleName("color2");
-        dataSource.addEvent(event);
-
-        gregorianCalendar.add(GregorianCalendar.DATE, 4);
-        gregorianCalendar.set(GregorianCalendar.HOUR_OF_DAY, 9);
-        gregorianCalendar.set(GregorianCalendar.MINUTE, 0);
-        start = gregorianCalendar.getTime();
-        gregorianCalendar.add(GregorianCalendar.HOUR_OF_DAY, 9);
-        end = gregorianCalendar.getTime();
-        event = getNewEvent("Free time", start, end);
-        dataSource.addEvent(event);*/
-
-        gregorianCalendar.setTime(originalDate);
-    }
-
     // >> INITIALIZATION AND LAYOUT <<
 
     // >> HANDLERS <<
@@ -426,7 +263,7 @@ public class ConsultationView extends GridLayout implements View{
         }
     }
 
-    private void handleRangeSelect(CalendarComponentEvents.RangeSelectEvent event) {
+    private void handleRangeSelect(RangeSelectEvent event) {
         Date start = event.getStart();
         Date end = event.getEnd();
 
@@ -642,7 +479,5 @@ public class ConsultationView extends GridLayout implements View{
 
     // >> WORKING WITH DATES <<
     @Override
-    public void enter(ViewChangeListener.ViewChangeEvent event) {
-
-    }
+    public void enter(ViewChangeListener.ViewChangeEvent event) {}
 }
