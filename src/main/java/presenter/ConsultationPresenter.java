@@ -30,7 +30,7 @@ public class ConsultationPresenter {
         consultations = new ArrayList<>(consultationManager.listConsultation(startDay, endDay));
         Random random = new Random();
         for (Consultation consultation : consultations) {
-            ConsultationBasicEvent basicEvent = new ConsultationBasicEvent ("Радиохирургия", "Some description.", consultation);
+            ConsultationBasicEvent basicEvent = new ConsultationBasicEvent (null, "Some description.", consultation);
             basicEvent.setExecutor(EXECUTORS.get(random.nextInt(EXECUTORS.size())));
             basicEvent.getStart().setHours(9);
             basicEvent.getEnd().setHours(18);

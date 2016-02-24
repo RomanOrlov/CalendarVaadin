@@ -12932,3 +12932,28 @@ div.v-layout.v-horizontal.v-widget {
 	width: 19px;
 	overflow: hidden;
 }
+
+.mytheme .v-calendar .v-calendar-event-color1 {
+	color: #FFFF00;
+}
+
+.mytheme .v-calendar .v-calendar-event-color4 {
+	color: #F00FFF;
+}
+
+.mytheme .v-calendar .v-calendar-event-FUCKMYEYES {
+	color: #000000;
+}
+
+.mytheme .v-calendar .v-calendar-event-FUCKMYEYES-all-day {
+	background-color: #0F0FFF;
+}
+
+.mytheme .v-calendar .v-calendar-event-FUCKMYEYES .v-calendar-event-caption {
+	color: #FFF00F;
+}
+
+.mytheme .v-calendar .v-calendar-event-FUCKMYEYES .v-calendar-event-content {
+	border-color: #FF0000;
+	background-color: #FF00FF;
+}

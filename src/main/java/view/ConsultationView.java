@@ -82,6 +82,7 @@ public class ConsultationView extends GridLayout implements View{
     private CalendarEvent createNewEvent(Date start, Date end) {
         Consultation consultation = new Consultation(new Date(),0,"","","",start,end,"");
         ConsultationBasicEvent event = new ConsultationBasicEvent("Новая консультаций","Здесь что-то будет",consultation);
+        event.setStyleName("FUCKMYEYES");
         consultationModel.beanItemContainer.addBean(event);
         return event;
     }
@@ -89,6 +90,7 @@ public class ConsultationView extends GridLayout implements View{
     private ConsultationBasicEvent getNewEvent(String caption, Date start, Date end) {
         Consultation consultation = new Consultation(new Date(),0,"","","",start,end,"");
         ConsultationBasicEvent event = new ConsultationBasicEvent(caption,"new event",consultation);
+        event.setStyleName("FUCKMYEYES");
         consultationModel.beanItemContainer.addBean(event);
         return event;
     }

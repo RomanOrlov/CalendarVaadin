@@ -35,4 +35,32 @@
   @include valo;
 
   // Insert your own theme rules here
+  .v-calendar .v-calendar-event-color1 {
+    color: #FFFF00;
+  }
+  .v-calendar .v-calendar-event-color4 {
+    color: #F00FFF;
+  }
+
+  /*А вот это, что то, нигде не появилось */
+  .v-calendar .v-calendar-event-FUCKMYEYES {
+    color: #000000;
+  }
+
+  /* Таким цветом будет событие на весь день */
+  .v-calendar .v-calendar-event-FUCKMYEYES-all-day {
+    background-color: #0F0FFF;
+  }
+
+  /* Заголовок в дне и неделе (а вот как поменять цвет текста в месяце пока хз) */
+  .v-calendar .v-calendar-event-FUCKMYEYES .v-calendar-event-caption {
+    color: #FFF00F;
+  }
+
+    /* Ну, тут ясно, задний фон и граница event'a в дне и неделе*/
+  .v-calendar .v-calendar-event-FUCKMYEYES .v-calendar-event-content {
+    border-color: #FF0000;
+    background-color: #FF00FF;
+  }
+
 }
