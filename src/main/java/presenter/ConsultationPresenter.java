@@ -12,7 +12,8 @@ import java.util.*;
  */
 public class ConsultationPresenter {
 
-    private static final ArrayList<String> EXECUTORS = new ArrayList<>(Arrays.asList("физик", "онколог", "планировщик", "врач", "лечащий врач"));
+    public static final ArrayList<String> PROCEDURES = new ArrayList<>(Arrays.asList("Радиохирургия","Заочная консультация","Очная консультация","Оннкология"));
+    public static final ArrayList<String> EXECUTORS = new ArrayList<>(Arrays.asList("физик", "онколог", "планировщик", "врач", "лечащий врач"));
     public final ConsultationModel consultationModel;
     public final ConsultationManager consultationManager;
     private static ArrayList<Consultation> consultations = new ArrayList<>();

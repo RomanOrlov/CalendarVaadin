@@ -14,8 +14,10 @@ public class Tests {
 
     @Ignore
     @Test
-    public void patients(){
-        GregorianCalendar calendar= new GregorianCalendar(2016, 1, 1);
+    public void patients() {
+        int a = 5435 >>> 43;
+
+        GregorianCalendar calendar = new GregorianCalendar(2016, 1, 1);
         Date startDay = calendar.getTime();
         calendar.add(calendar.MONTH, 1);
         Date endDay = calendar.getTime();

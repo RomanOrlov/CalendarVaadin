@@ -1,6 +1,5 @@
 package view;
 
-import com.vaadin.data.Property;
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.data.util.BeanItem;
 import com.vaadin.shared.ui.datefield.Resolution;
@@ -8,6 +7,10 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.components.calendar.event.BasicEvent;
 import com.vaadin.ui.components.calendar.event.BasicEventProvider;
 import com.vaadin.ui.components.calendar.event.CalendarEvent;
+import presenter.ConsultationPresenter;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class EventEditForm {
 
@@ -15,12 +18,13 @@ public class EventEditForm {
     private Calendar calendarComponent;
     private BasicEventProvider dataSource;
     private ConsultationView consultationView;
-
+    public static final ArrayList<String> styles = new ArrayList<>(Arrays.asList("color1", "color2", "color3", "color4", "color5"));
 
     private Window scheduleEventPopup;
     private final FormLayout scheduleEventFieldLayout = new FormLayout();
     private FieldGroup scheduleEventFieldGroup = new FieldGroup();
-    private TextField captionField;
+    private NativeSelect selectProcedure;
+    private NativeSelect selectStyle;
     private DateField startDateField;
     private DateField endDateField;
     private Button deleteEventButton;
@@ -33,41 +37,37 @@ public class EventEditForm {
         this.dataSource = consultationView.dataSource;
     }
 
-    // >> Работа с FieldGroup
+    //region Работа с FieldGroup
+    // Осуществление привязки данных (binding) к полям класса
     private void initFormFields(Layout formLayout, Class<? extends CalendarEvent> eventClass) {
 
         startDateField = createDateField("Начало");
+        startDateField.setRequired(true);
         endDateField = createDateField("Конец");
+        endDateField.setRequired(true);
 
-        final CheckBox allDayField = createCheckBox("Весь день");
-        allDayField.addValueChangeListener(valueChangeEvent -> {
-            Object value = valueChangeEvent.getProperty().getValue();
-            if (value instanceof Boolean && Boolean.TRUE.equals(value)) {
-                setFormDateResolution(Resolution.DAY);
-            } else {
-                setFormDateResolution(Resolution.MINUTE);
-            }
-        });
+        selectProcedure = createNativeSelect(ConsultationPresenter.PROCEDURES, "Вид консультации");
+        selectProcedure.setRequired(true);
 
-        captionField = createTextField("Caption");
-        captionField.setInputPrompt("Event name");
-        captionField.setRequired(true);
-        final TextArea descriptionField = createTextArea("Description");
-        descriptionField.setInputPrompt("Describe the event");
+        selectStyle = createNativeSelect(styles, "Цвет");
+
+        final TextArea descriptionField = createTextArea("Описание");
         descriptionField.setRows(3);
-
-        formLayout.addComponent(startDateField);
-        formLayout.addComponent(endDateField);
-        formLayout.addComponent(allDayField);
-        formLayout.addComponent(captionField);
+        HorizontalLayout horizontalLayout = new HorizontalLayout(startDateField, endDateField);
+        horizontalLayout.setSpacing(true);
+        formLayout.addComponent(horizontalLayout);
+        formLayout.addComponent(selectProcedure);
         formLayout.addComponent(descriptionField);
+        formLayout.addComponent(selectStyle);
 
         scheduleEventFieldGroup.bind(startDateField, "start");
+        scheduleEventFieldGroup.bind(selectStyle, "styleName");
         scheduleEventFieldGroup.bind(endDateField, "end");
-        scheduleEventFieldGroup.bind(captionField, "caption");
+        scheduleEventFieldGroup.bind(selectProcedure, "caption");
         scheduleEventFieldGroup.bind(descriptionField, "description");
-        scheduleEventFieldGroup.bind(allDayField, "allDay");
     }
+
+    // Обновление полей формы
     private void updateCalendarEventForm(CalendarEvent event) {
         BeanItem<CalendarEvent> item = new BeanItem<>(event);
         scheduleEventFieldLayout.removeAllComponents();
@@ -76,12 +76,14 @@ public class EventEditForm {
         scheduleEventFieldGroup.setBuffered(true);
         scheduleEventFieldGroup.setItemDataSource(item);
     }
+
     private void setFormDateResolution(Resolution resolution) {
         if (startDateField != null && endDateField != null) {
             startDateField.setResolution(resolution);
             endDateField.setResolution(resolution);
         }
     }
+
     @SuppressWarnings("unchecked")
     private BasicEvent getFormCalendarEvent() {
         BeanItem<CalendarEvent> item = (BeanItem<CalendarEvent>) scheduleEventFieldGroup
@@ -89,15 +91,15 @@ public class EventEditForm {
         CalendarEvent event = item.getBean();
         return (BasicEvent) event;
     }
-    // >> Работа с FieldGroup
+    //endregion Работа с FieldGroup
 
-    // >> PopUp - окно,Window. Создание, отображение, обновление <<
+    //region PopUp - окно,Window. Создание, отображение, обновление <<
     private void createCalendarEventPopup() {
         VerticalLayout layout = new VerticalLayout();
         layout.setSpacing(true);
 
         scheduleEventPopup = new Window(null, layout);
-        scheduleEventPopup.setWidth("300px");
+        scheduleEventPopup.setSizeFull();
         scheduleEventPopup.setModal(true);
         scheduleEventPopup.center();
 
@@ -115,7 +117,6 @@ public class EventEditForm {
         applyEventButton.addStyleName("primary");
         Button cancel = new Button("Cancel", clickEvent -> discardCalendarEvent());
         deleteEventButton = new Button("Delete", clickEvent -> deleteCalendarEvent());
-        deleteEventButton.addStyleName("borderless");
         scheduleEventPopup.addCloseListener(closeEvent -> discardCalendarEvent());
 
         HorizontalLayout buttons = new HorizontalLayout();
@@ -128,38 +129,39 @@ public class EventEditForm {
         buttons.setComponentAlignment(applyEventButton, Alignment.TOP_RIGHT);
         buttons.addComponent(cancel);
         layout.addComponent(buttons);
-
     }
 
     public void showEventPopup(CalendarEvent event, boolean newEvent) {
         if (event == null) {
             return;
         }
+        // Появление кнопок и обновление оглавления окна
         updateCalendarEventPopup(newEvent);
+        // Обновление полей формы
         updateCalendarEventForm(event);
-        captionField.focus();
         if (!consultationView.getUI().getWindows().contains(scheduleEventPopup)) {
             consultationView.getUI().addWindow(scheduleEventPopup);
         }
     }
 
+    // Появление кнопок и обновление оглавления окна
     private void updateCalendarEventPopup(boolean newEvent) {
         if (scheduleEventPopup == null) {
             createCalendarEventPopup();
         }
         if (newEvent) {
-            scheduleEventPopup.setCaption("New event");
+            scheduleEventPopup.setCaption("Новая штука");
         } else {
-            scheduleEventPopup.setCaption("Edit event");
+            scheduleEventPopup.setCaption("Редактировать консультацию");
         }
 
         deleteEventButton.setVisible(!newEvent);
         deleteEventButton.setEnabled(!calendarComponent.isReadOnly());
         applyEventButton.setEnabled(!calendarComponent.isReadOnly());
     }
-    // >> PopUp - окно,Window. Создание, отображение, обновление <<
+    //endregion PopUp - окно,Window. Создание, отображение, обновление
 
-    // >> ШАБЛОНЫ Чекбоксов, Текстовых полей и т.д <<
+    //region ШАБЛОНЫ Чекбоксов, Текстовых полей и т.д <<
     private CheckBox createCheckBox(String caption) {
         CheckBox cb = new CheckBox(caption);
         cb.setImmediate(true);
@@ -187,9 +189,16 @@ public class EventEditForm {
         }
         return f;
     }
-    // >> ШАБЛОНЫ Чекбоксов, Текстовых полей и т.д <<
 
-    // >> Изменение, удаление и сброс события (по факту сущности, реализующей BasicEvent)
+    private NativeSelect createNativeSelect(ArrayList<String> strings, String caption) {
+        NativeSelect nativeSelect = new NativeSelect(caption, strings);
+        nativeSelect.setRequired(true);
+        nativeSelect.setBuffered(true);
+        return nativeSelect;
+    }
+    //endregion ШАБЛОНЫ Чекбоксов, Текстовых полей и т.д <<
+
+    //region Изменение, удаление и сброс события (по факту сущности, реализующей BasicEvent)
     private void commitCalendarEvent() throws FieldGroup.CommitException {
         scheduleEventFieldGroup.commit();
         BasicEvent event = getFormCalendarEvent();
@@ -199,10 +208,10 @@ public class EventEditForm {
         if (!dataSource.containsEvent(event)) {
             dataSource.addEvent(event);
         }
-        //if (m)
-
         consultationView.getUI().removeWindow(scheduleEventPopup);
+
     }
+
     /* Removes the event from the data source and fires change event. */
     private void deleteCalendarEvent() {
         BasicEvent event = getFormCalendarEvent();
@@ -210,11 +219,12 @@ public class EventEditForm {
             dataSource.removeEvent(event);
         }
         consultationView.getUI().removeWindow(scheduleEventPopup);
+
     }
 
     private void discardCalendarEvent() {
         scheduleEventFieldGroup.discard();
         consultationView.getUI().removeWindow(scheduleEventPopup);
     }
-    // >> Изменение и сброс события (по факту сущности, реализующей BasicEvent)
+    //endregion Изменение и сброс события (по факту сущности, реализующей BasicEvent)
 }

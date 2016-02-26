@@ -1,29 +1,25 @@
 package view;
 
-import backend.ConsultationManager;
 import backend.basicevent.ConsultationBasicEvent;
 import backend.entity.Consultation;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
-import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.*;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.components.calendar.CalendarComponentEvents;
-import com.vaadin.ui.components.calendar.CalendarComponentEvents.*;
-import com.vaadin.ui.components.calendar.event.BasicEvent;
+import com.vaadin.ui.components.calendar.CalendarComponentEvents.EventClick;
+import com.vaadin.ui.components.calendar.CalendarComponentEvents.RangeSelectEvent;
 import com.vaadin.ui.components.calendar.event.BasicEventProvider;
 import com.vaadin.ui.components.calendar.event.CalendarEvent;
 import com.vaadin.ui.components.calendar.handler.BasicDateClickHandler;
 import com.vaadin.ui.components.calendar.handler.BasicWeekClickHandler;
 import model.ConsultationModel;
-import presenter.ConsultationPresenter;
 
 import java.text.DateFormatSymbols;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-public class ConsultationView extends GridLayout implements View{
+public class ConsultationView extends GridLayout implements View {
 
     // 3 режима, - день, неделя, месяц.
     private enum Mode {
@@ -80,22 +76,22 @@ public class ConsultationView extends GridLayout implements View{
     }
 
     private CalendarEvent createNewEvent(Date start, Date end) {
-        Consultation consultation = new Consultation(new Date(),0,"","","",start,end,"");
-        ConsultationBasicEvent event = new ConsultationBasicEvent("Новая консультаций","Здесь что-то будет",consultation);
-        event.setStyleName("FUCKMYEYES");
+        Consultation consultation = new Consultation(new Date(), 0, "", "", "", start, end, "");
+        ConsultationBasicEvent event = new ConsultationBasicEvent("Новая консультаций", "Здесь что-то будет", consultation);
+        event.setStyleName("color2");
         consultationModel.beanItemContainer.addBean(event);
         return event;
     }
 
     private ConsultationBasicEvent getNewEvent(String caption, Date start, Date end) {
-        Consultation consultation = new Consultation(new Date(),0,"","","",start,end,"");
-        ConsultationBasicEvent event = new ConsultationBasicEvent(caption,"new event",consultation);
-        event.setStyleName("FUCKMYEYES");
+        Consultation consultation = new Consultation(new Date(), 0,  "", "", "", start, end, "");
+        ConsultationBasicEvent event = new ConsultationBasicEvent(caption, "new event", consultation);
+        event.setStyleName("color2");
         consultationModel.beanItemContainer.addBean(event);
         return event;
     }
 
-    // >> INITIALIZATION AND LAYOUT <<
+    //region INITIALIZATION AND LAYOUT
 
     // Инициализируем компонент calendarComponent
     private void initCalendar() {
@@ -135,11 +131,11 @@ public class ConsultationView extends GridLayout implements View{
         HorizontalLayout hl = new HorizontalLayout();
         hl.setWidth("100%");
         hl.setSpacing(true);
-        hl.addComponents(prevButton,captionLabel);
+        hl.addComponents(prevButton, captionLabel);
 
         CssLayout group = new CssLayout();
         group.addStyleName("v-component-group");
-        group.addComponents(dayButton,weekButton,monthButton);
+        group.addComponents(dayButton, weekButton, monthButton);
         hl.addComponent(group);
 
         hl.addComponent(nextButton);
@@ -152,7 +148,7 @@ public class ConsultationView extends GridLayout implements View{
         controlPanel.setMargin(true);
         controlPanel.setSpacing(true);
         controlPanel.setWidth("100%");
-        controlPanel.addComponents(hideWeekendsButton,hideRS,hideOhcno,hideOncology,hideZaohcno,addNewEvent);
+        controlPanel.addComponents(hideWeekendsButton, hideRS, hideOhcno, hideOncology, hideZaohcno, addNewEvent);
 
         addComponent(controlPanel);
         addComponent(hl);
@@ -172,25 +168,25 @@ public class ConsultationView extends GridLayout implements View{
     }
 
     private void initNavigationButtons() {
-        monthButton = new Button("Месяц", clickEvent-> switchToMonthView());
+        monthButton = new Button("Месяц", clickEvent -> switchToMonthView());
 
         weekButton = new Button("Неделя", clickEvent -> {
-                CalendarComponentEvents.WeekClickHandler handler = (CalendarComponentEvents.WeekClickHandler) calendarComponent
-                        .getHandler(CalendarComponentEvents.WeekClick.EVENT_ID);
-                handler.weekClick(new CalendarComponentEvents.WeekClick(calendarComponent, gregorianCalendar
-                        .get(GregorianCalendar.WEEK_OF_YEAR), gregorianCalendar
-                        .get(GregorianCalendar.YEAR)));
+            CalendarComponentEvents.WeekClickHandler handler = (CalendarComponentEvents.WeekClickHandler) calendarComponent
+                    .getHandler(CalendarComponentEvents.WeekClick.EVENT_ID);
+            handler.weekClick(new CalendarComponentEvents.WeekClick(calendarComponent, gregorianCalendar
+                    .get(GregorianCalendar.WEEK_OF_YEAR), gregorianCalendar
+                    .get(GregorianCalendar.YEAR)));
         });
 
         dayButton = new Button("День", clickEvent -> {
-                BasicDateClickHandler handler = (BasicDateClickHandler) calendarComponent
-                        .getHandler(CalendarComponentEvents.DateClickEvent.EVENT_ID);
-                handler.dateClick(new CalendarComponentEvents.DateClickEvent(calendarComponent,
-                        gregorianCalendar.getTime()));
+            BasicDateClickHandler handler = (BasicDateClickHandler) calendarComponent
+                    .getHandler(CalendarComponentEvents.DateClickEvent.EVENT_ID);
+            handler.dateClick(new CalendarComponentEvents.DateClickEvent(calendarComponent,
+                    gregorianCalendar.getTime()));
         });
 
-        nextButton = new Button("Вперед", clickEvent-> handleNextButtonClick());
-        prevButton = new Button("Назад", clickEvent-> handlePreviousButtonClick());
+        nextButton = new Button("Вперед", clickEvent -> handleNextButtonClick());
+        prevButton = new Button("Назад", clickEvent -> handlePreviousButtonClick());
     }
 
     public void initAddNewEventButton() {
@@ -233,9 +229,9 @@ public class ConsultationView extends GridLayout implements View{
         });
         calendarComponent.setHandler(this::handleRangeSelect);
     }
-    // >> INITIALIZATION AND LAYOUT <<
+    //endregion INITIALIZATION AND LAYOUT
 
-    // >> HANDLERS <<
+    //region HANDLERS
 
     private void handleNextButtonClick() {
         switch (viewMode) {
@@ -292,9 +288,9 @@ public class ConsultationView extends GridLayout implements View{
 
     }
 
-    // >> HANDLERS <<
+    //endregion HANDLERS <<
 
-    // >> NAVIGATION BETWEEN DAYS <<
+    //region NAVIGATION BETWEEN DAYS <<
 
     private void nextMonth() {
         rollMonth(1);
@@ -350,9 +346,9 @@ public class ConsultationView extends GridLayout implements View{
         resetCalendarTime(true);
     }
 
-    // >> NAVIGATION BETWEEN DAYS <<
+    //endregion NAVIGATION BETWEEN DAYS <<
 
-    // >> SWITCHES TO OTHER WIEW <<
+    //region SWITCHES TO OTHER WIEW
 
     public void switchToDayView() {
         viewMode = Mode.DAY;
@@ -380,9 +376,9 @@ public class ConsultationView extends GridLayout implements View{
         gregorianCalendar.setTime(getToday());
     }
 
-    // >> SWITCHES TO OTHER WIEW <<
+    //endregion SWITCHES TO OTHER WIEW <<
 
-    // >> WORKING WITH DATES <<
+    //region WORKING WITH DATES
 
     private Date getToday() {
         return new Date();
@@ -479,7 +475,9 @@ public class ConsultationView extends GridLayout implements View{
         return currentCalendar.getTime();
     }
 
-    // >> WORKING WITH DATES <<
+    //endregion WORKING WITH DATES
+
     @Override
-    public void enter(ViewChangeListener.ViewChangeEvent event) {}
+    public void enter(ViewChangeListener.ViewChangeEvent event) {
+    }
 }
